@@ -4,7 +4,7 @@
 <script type="text/javascript">
 $(function() {
     $( "#text-search" ).autocomplete({
-        source: "<?php site_url('product/view/1') ?>",
+        source: "<?php echo site_url('product/search/1') ?>",
     });
 });
 </script>
@@ -27,8 +27,8 @@ $(function() {
             <img src="<?php echo public_url()?>/site/images/cart.png" alt="cart bnc"> 
 </div>       
        <div id="search"><!-- the search -->
-			<form action="tim-kiem.html" method="get">
-			     				 <input type="text" aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" class="ui-autocomplete-input" placeholder="Tìm kiếm sản phẩm..." value="" name="key-search" id="text-search">
+			<form action="<?php echo site_url('product/search') ?>" method="get">
+			     				 <input type="text" aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" class="ui-autocomplete-input" placeholder="Tìm kiếm sản phẩm..." value="<?php echo isset($key) ? $key : '';?>" name="key-search" id="text-search">
 				 <input type="submit" value="" name="but" id="but">
 			</form>
        </div><!-- End search -->
@@ -40,7 +40,7 @@ $(function() {
                <!-- The box-header-->
 			        <div id="menu"><!-- the menu -->
            <ul class="menu_top">
-                <li class="active index-li"><a href="">Trang chủ </a></li>
+                <li class="active index-li"><a href="<?php echo base_url() ?>">Trang chủ </a></li>
                 <li class=""><a href="info/view/1.html">Giới thiệu</a></li>
                 <li class=""><a href="info/view/2.html">Hướng dẫn</a></li>
                 <li class=""><a href="san-pham.html">Sản phẩm</a></li>
