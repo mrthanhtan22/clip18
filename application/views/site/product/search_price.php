@@ -37,8 +37,7 @@
                        </div>
                    </div>
                    <?php endforeach;?>
-                           
-               
+                    
                 <div class="clear"></div>
           </div><!-- End box-content-center -->
           

@@ -42,6 +42,17 @@ Class MY_Controller extends CI_Controller
                     $news_list = $this->news_model->get_list($input);
                     $this->data['news_list'] = $news_list;
 
+                    /*kiem tra thanh vien dang nhap hay chua*/
+                    $user_id_login = $this->session->userdata('user_id_login');
+                    $this->data['user_id_login'] = $user_id_login;
+                    /* lay thong tin thanh vien*/
+
+                    if ($user_id_login) {
+                        $this->load->model('user_model');
+                        $user_info = $this->user_model->get_info($user_id_login);
+                        $this->data['user_info'] = $user_info;
+                    }
+
                     /*load thu vien cart*/
                     $this->load->library('cart');
                     $this->data['total_items'] = $this->cart->total_items();

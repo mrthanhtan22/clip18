@@ -38,8 +38,6 @@
 		}else{
 			$input['where'] = array('catalog_id'=>$id);
 		}
-		
-
 
 			//lay tong so luong ta ca cac san pham trong websit
         	$total_rows = $this->product_model->get_total($input);

@@ -18,6 +18,11 @@
 	                  </div>
 	                  
 	                  <div class="content">
+	                  	  <?php if(isset($message) && $message):?>
+						<div class="nNote nInformation hideit">
+						     <h3 style="color:red"><?php echo $message?></h3>
+						</div>
+						<?php endif;?>
 	                      <?php $this->load->view($temp , $this->data);?>
 	                  </div>
 	                  
